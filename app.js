@@ -9,6 +9,7 @@ import rootRouter from './routes/root.js'
 import registerRouter from './routes/register.js'
 import loginRouter from './routes/login.js'
 import logoutRouter from './routes/logout.js'
+import encrypt from 'mongoose-encryption';
 
 
 dotenv.config();
