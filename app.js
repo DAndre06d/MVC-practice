@@ -9,7 +9,6 @@ import rootRouter from './routes/root.js'
 import registerRouter from './routes/register.js'
 import loginRouter from './routes/login.js'
 import logoutRouter from './routes/logout.js'
-import encrypt from 'mongoose-encryption';
 
 
 dotenv.config();
@@ -25,6 +24,7 @@ app.use('/', rootRouter)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
+//DB CONNECTION
 mongoose.connection.once('open', ()=>{
     console.log("Connected to mongoDB")
     app.listen(port, ()=>{
