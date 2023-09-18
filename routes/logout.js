@@ -1,9 +1,8 @@
 import express from "express"
+import handleLogout from "../controller/logoutController.js";
 
 const logoutRouter = express.Router();
 
-logoutRouter.get('/', (req, res)=>{
-    res.render('home')
-})
+logoutRouter.get('/', handleLogout)
 
 export default logoutRouter
