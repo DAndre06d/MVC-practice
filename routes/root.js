@@ -1,7 +1,7 @@
-import expres from "express"
+import express from "express"
 
 
-const rootRouter = expres.Router();
+const rootRouter = express.Router();
 
 rootRouter.get('^/$|/home',(req,res)=>{
     res.render('home')
