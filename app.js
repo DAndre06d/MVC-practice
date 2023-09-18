@@ -9,6 +9,7 @@ import rootRouter from './routes/root.js'
 import session from 'express-session'
 import passport from 'passport'
 import passpostLocalMongoose from 'passport-local-mongoose'
+import middlewareSession from './middleware/sessionPass.js'
 import registerRouter from './routes/register.js'
 import loginRouter from './routes/login.js'
 import logoutRouter from './routes/logout.js'
@@ -21,11 +22,7 @@ const port = 3000;
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'))
-app.use(session({
-    secret: "Our Little bittle secret.",
-    resave: false,
-    saveUninitialized: false,
-}))
+app.use(middlewareSession)
 app.use(passport.initialize())
 app.use(passport.session())
 connnectDB();
